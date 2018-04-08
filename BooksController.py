@@ -10,12 +10,12 @@ class BooksController:
 
     @app.route('/', methods=['GET'])
     def Get():
-        context = DatabaseContext.DatabaseContext("192.168.1.3", "root", "!FXp@ss8", "BooksCollection")
-        context.RunQuery("SELECT * FROM Books")
-        result = ""
-
+        context = DatabaseContext.DatabaseContext("192.168.1.3", "root", "", "BooksCollection")
+        numrows = context.RunQuery("SELECT * FROM Books")
+        result = "ss"
+        
         for row in context.result:
-            result += row
+            result += str(row[1])
 
         return result
     

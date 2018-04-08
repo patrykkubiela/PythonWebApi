@@ -2,15 +2,15 @@ import MySQLdb
 
 class DatabaseContext:
 
-    result = []    
-
+    result = []
+    
     def __init__(self, host, user, password, dbname):
-        db = MySQLdb.connect(host=host,user=user,passwd=password,db=dbname)        
-        cur = db.cursor()
+        self.db = MySQLdb.connect(host,user,password,dbname)        
+        self.cursor = self.db.cursor()
 
-    def RunQuery(query):
-        self.cur.execute(query)
-        self.result = self.cur.fetchall()
+    def RunQuery(self, query):
+        self.cursor.execute(query)
+        self.result = self.cursor.fetchall()
 
     def CloseConnection():
         db.close()
