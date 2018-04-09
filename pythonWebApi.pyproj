@@ -30,6 +30,9 @@
     <Compile Include="BooksController.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BooksControllerTest.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DatabaseContext.py">
       <SubType>Code</SubType>
     </Compile>
